@@ -69,11 +69,11 @@ public class RegisterActivity extends AppCompatActivity {
         }
         else if(vd.isEmpty(pages.getText().toString()))
         {
-            pages.setText("Number of Pages can't be Empty");
+            pages.setError("Number of Pages can't be Empty");
         }
         else if(!vd.isNumber(pages.getText().toString()))
         {
-            pages.setText("Enter Numbers only");
+            pages.setError("Enter Numbers only");
         }
         else
         {
@@ -91,6 +91,25 @@ public class RegisterActivity extends AppCompatActivity {
 
 
 
+
+
+    }
+
+    public void clearOnClick(View view)
+    {
+        title = (EditText)findViewById(R.id.editTextTitle);
+        author = (EditText) findViewById(R.id.editTextAuthor);
+        pages = (EditText) findViewById(R.id.editTextPages);
+
+        selectedradio = (RadioButton) findViewById(R.id.radioButtonNo);
+
+        clear = (Button) findViewById(R.id.clear);
+
+        title.setText("");
+        title.requestFocus();
+        author.setText("");
+        pages.setText("");
+        selectedradio.setChecked(true);
 
 
     }
