@@ -51,4 +51,13 @@ public class BookViewActivity extends AppCompatActivity {
         else
             t1.setText("Book Yet To Read!!");
     }
+
+
+    public void onBackToListClick(View view)
+    {
+        Intent intent1;
+        intent1 = new Intent(this, CustomListActivity.class);
+        startActivity(intent1);
+
+    }
 }

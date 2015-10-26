@@ -80,14 +80,14 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     public List<BookData> getAllBooks() {
         List<BookData> BookList = new ArrayList<BookData>();
 
-        String selectQuery = "SELECT  * FROM " + TABLE_name;
+        String selectQuery = "SELECT  * FROM " + TABLE_name +" ORDER BY "+ KEY_title +" ASC";
 
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor cursor = db.rawQuery(selectQuery, null);
 
 
 
-        if (cursor!=null && cursor.moveToLast()) {
+        if (cursor!=null && cursor.moveToFirst()) {
             do {
                 BookData b = new BookData();
 
@@ -101,7 +101,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
                 BookList.add(b);
 
-            }while (cursor.moveToPrevious());
+            }while (cursor.moveToNext());
         }
             cursor.close();
         db.close();
