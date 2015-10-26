@@ -247,7 +247,7 @@
             android:id="@+id/clear"
             android:textSize="20dp"
             android:layout_margin="14dp"
-
+            android:onClick="clearOnClick"
 
             android:layout_weight="0.50" />
 
